@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const hashPassword = require("../miscellanous/hash");
 const { signUpValidation } = require("../validations/user");
-const sendMessage = require("../middleware/mailer/mailer");
+const sendMessage = require("../miscellanous/mailer/mailer");
 /*
 
 	Here I define functions to be used in my routes for general purpose pages like index, about and contact
