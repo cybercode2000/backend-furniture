@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
 const debug = require("debug")("app:DB");
 
+require('dotenv').config()
+
 let MongoURI;
 
-module.exports = () => {
- 
-  MongoURI = process.env.DB_String;
 
+module.exports = () => {
+  
+  MongoURI = process.env.DB_String;
+  
   mongoose.connect(MongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
