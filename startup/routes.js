@@ -1,6 +1,6 @@
-const PagesRoutes = require("../routes/PagesRoutes.js");
+const general = require("../routes/general");
 
 
 module.exports = app => {
-  app.use("/", PagesRoutes);
+  app.use("/", general);
 };
