@@ -3,7 +3,7 @@ const passport = require('passport');
 const authenticate = require('../miscellanous/authenticate')
 const router = express.Router();
 
-const { index, getSignUp, getLogin, logOut } = require('../controllers/General');
+const { index, getSignUp, getLogin, logOut, activate } = require('../controllers/General');
 
 
 // Respond to /
@@ -12,6 +12,8 @@ router.get('/', index);
 router.get("/login", authenticate, getLogin);
 
 router.get("/register", authenticate, getSignUp);
+
+router.get("/activate", authenticate, activate);
 
 router.post(
     "/register",
