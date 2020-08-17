@@ -1,0 +1,19 @@
+{
+  "name": "Furniture",
+  "version": "1.0.0",
+  "description": "This project is for a startup that is acquiring used furniture from users at a price, refurbishing them and selling them off at a margin. The website must display second-hand furniture that is currently being sold.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
