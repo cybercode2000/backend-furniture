@@ -2,6 +2,7 @@ const User = require("../models/User");
 const hashPassword = require("../miscellanous/hash");
 const { signUpValidation } = require("../validations/user");
 const sendMessage = require("../miscellanous/mailer/mailer");
+
 /*
 
 	Here I define functions to be used in my routes for general purpose pages like index, about and contact
@@ -9,6 +10,10 @@ const sendMessage = require("../miscellanous/mailer/mailer");
 */
 exports.index = async (req, res) => {
   res.render("index", { title: "Home" });
+};
+
+exports.about = async (req, res) => {
+  res.render("about", { title: "About" });
 };
 
 exports.postSignup = async (req, res) => {
@@ -61,23 +66,6 @@ exports.postSignup = async (req, res) => {
   }
 };
 
-exports.getSignUp = async (req, res) => {
-  res.render("index", { title: "Home" });
-};
-
-exports.activate = async (req, res) => {
-  res.render("Activate", { title: "Activate your Account" });
-};
-
-exports.getLogin = async (req, res) => {
-  res.render("login", { title: "Login" });
-};
-
-exports.dashboard = async (req, res) => {
-  res.render("dashboard", { title: "Dashboard" })
-};
-
-exports.logOut = async (req, res) => {
-  req.logOut();
-  res.redirect("/login");
+exports.search = async (req, res) => {
+  res.render("search", { title: "Search" });
 };
