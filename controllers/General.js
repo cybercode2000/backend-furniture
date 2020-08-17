@@ -70,7 +70,11 @@ exports.activate = async (req, res) => {
 };
 
 exports.getLogin = async (req, res) => {
-  res.render("login", { title: "Login | Furniture App" });
+  res.render("login", { title: "Login" });
+};
+
+exports.dashboard = async (req, res) => {
+  res.render("dashboard", { title: "Dashboard" })
 };
 
 exports.logOut = async (req, res) => {
