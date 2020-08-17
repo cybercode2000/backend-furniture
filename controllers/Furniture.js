@@ -15,3 +15,7 @@ exports.newFurniture = (req, res) => {
 exports.showFurniture = (req, res) => {
 	res.render('single-furniture', { title: "Single Furniture" });
 };
+
+exports.saveNewFurniture = (req, res) => {
+	// Code goes here
+};

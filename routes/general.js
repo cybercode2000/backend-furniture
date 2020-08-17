@@ -5,7 +5,7 @@ const router = express.Router();
 
 const { index, about, search } = require('../controllers/General');
 const { getSignUp, getLogin, logOut, activate, dashboard, forgotPassword, changePassword, editProfile } = require('../controllers/User');
-const { newFurniture, showFurniture } = require('../controllers/Furniture');
+const { newFurniture, showFurniture, saveNewFurniture } = require('../controllers/Furniture');
 const { getAdmin } = require('../controllers/Admin');
 
 /*
@@ -70,6 +70,7 @@ router.get("/pay/receipt")
 	The user can add a new furniture to be sold
 */
 router.get("/furniture/new", authenticate, newFurniture);
+router.post("furniture/new", authenticate, saveNewFurniture);
 
 /*
 	Displays a single furniture page
