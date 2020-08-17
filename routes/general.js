@@ -4,8 +4,9 @@ const authenticate = require('../miscellanous/authenticate')
 const router = express.Router();
 
 const { index, about, search } = require('../controllers/General');
-const { getSignUp, getLogin, logOut, activate, dashboard, forgotPassword, changePassword } = require('../controllers/User');
+const { getSignUp, getLogin, logOut, activate, dashboard, forgotPassword, changePassword, editProfile } = require('../controllers/User');
 const { newFurniture, showFurniture } = require('../controllers/Furniture');
+const { getAdmin } = require('../controllers/Admin');
 
 /*
 	Respond to /
@@ -79,8 +80,16 @@ router.get("/furniture/:id", authenticate, showFurniture);
 	Displays a simple form for user mail to change password
 */
 router.get("/change-password", changePassword);
-router.get("/dashboard/update");
-router.get("/admin");
+
+/*
+	Updates the user details
+*/
+router.get("/dashboard/update", authenticate, editProfile);
+
+/*
+	Respond to /admin
+*/
+router.get("/admin", getAdmin);
 
 /*
 	User data is validated and registered here
