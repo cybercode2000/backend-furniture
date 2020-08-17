@@ -15,3 +15,7 @@ exports.getLogin = async (req, res) => {
   res.render("login", { title: "Login | Furniture App" });
 };
 
+exports.logOut = async (req, res) => {
+  req.logOut();
+  res.redirect("/login");
+};
